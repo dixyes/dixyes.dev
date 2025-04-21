@@ -1,0 +1,35 @@
+baseURL = 'https://dixyes.dev/'
+languageCode = 'zh-cn'
+title = 'dixyes.dev'
+theme = 'archie'
+copyright = "© Yun Dou (dixyes)"
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/dixyes"
+
+[[params.social]]
+name = "Home Page"
+icon = "home"
+url = "https://dixyes.cn"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "全部文章"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
+
+[[menu.main]]
+name = "bin"
+url = "https://bin.dixyes.cn"
+weight = 5
