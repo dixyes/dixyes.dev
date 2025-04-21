@@ -152,6 +152,6 @@ GetLatestHardwareRequirement(2, 000000016577E160) -> -2147023084
 
 于是resource hacker打开原版dll，发现有个JSON把规则写里面了。。。
 
-![删掉这些][resource_hacker.png]
+![删掉这些](resource_hacker.png)
 
 删掉其中的TPM TPM_REQUIRED secure boot啥的(只删最后的规则就行)，再启动安装程序就正常了
