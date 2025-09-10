@@ -33,3 +33,8 @@ weight = 4
 name = "bin"
 url = "https://bin.dixyes.cn"
 weight = 5
+
+[[menu.main]]
+name = "OID"
+url = "/pen-oid/"
+weight = 6
