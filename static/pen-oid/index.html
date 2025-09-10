@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PEN OID Registry for 1.3.6.1.4.1.64207</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    details {
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+
+    summary {
+      font-weight: bold;
+    }
+
+    summary:hover {
+      color: #007BFF;
+    }
+
+    .full-oid {
+      font-size: 0.9em;
+      color: #555;
+      margin-left: 10px;
+
+      cursor: text;
+      /* pointer-events: none; */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>PEN OID Registry for 1.3.6.1.4.1.64207</h1>
+  <p>1.3.6.1.4.1.64207 for Yun Dou (dixyes)</p>
+  <div id="description">
+    <details>
+      <summary>1 - v1</summary>
+      Version 1 OIDs.
+      <details>
+        <summary>509 - x509</summary>
+        OIDs for X.509 certificates and related things.
+      </details>
+      <details>
+        <summary>99 - 'c'ompression</summary>
+        OIDs for compression algorithms.
+        <details>
+          <summary>115 - z's'td</summary>
+          Zstandard compression algorithm
+        </details>
+      </details>
+    </details>
+    <details>
+      <summary>254 - experiment</summary>
+      Experimental OIDs for testing and development anything.
+      Sub-OID for this may change or be removed without notice.
+    </details>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // add full OID to each summary
+      container = document.querySelector("#description");
+      function modify(element, currentOID) {
+        // add full OID to summary
+        const summary = element.querySelector("summary");
+        const newOID = currentOID ? `${currentOID}.${summary.textContent.split(" - ")[0].trim()}` : summary.textContent.split(" - ")[0].trim();
+        const oidSpan = document.createElement("span");
+        oidSpan.className = "full-oid";
+        oidSpan.textContent = newOID;
+        summary.appendChild(oidSpan);
+
+        // highlight single quote characters
+        summary.innerHTML = summary.innerHTML.replace(/'\w'/g, "<span style='color: red;'>$&</span>");
+
+        // descend into child details
+        const details = element.querySelectorAll(":scope > details");
+        details.forEach((child) => modify(child, newOID));
+      }
+      const topDetails = container.querySelectorAll(":scope > details");
+      topDetails.forEach((detail) => modify(detail, "1.3.6.1.4.1.64207"));
+
+    });
+  </script>
+</body>
+
+</html>
