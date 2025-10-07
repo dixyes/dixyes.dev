@@ -9,7 +9,7 @@ tags:
 toc: true
 ---
 
-最近把FT2000/4收拾一下，记一下OpenBMC的dbus api怎么用
+最近把FT2000+/64收拾一下，记一下OpenBMC的dbus api怎么用
 
 <!--more-->
 
