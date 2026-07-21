@@ -45,7 +45,7 @@ mm 0x94d30710
 | 设备 | 内存组态 | 现象 |
 | --- | --- | --- |
 | D920S10 | 单条插在DDR4_1，显示位于CHANNEL 0 | 读DDRC0 DDRC1没事，读DDRC2 DDRC3卡死 |
-| D920S10 | 单条插在DDR4_2，显示位于CHANNEL 0 | 读DDRC1没事，读DDRC0 DDRC2 DDRC3卡死 |
+| D920S10 | 单条插在DDR4_2，显示位于CHANNEL 1 | 读DDRC1没事，读DDRC0 DDRC2 DDRC3卡死 |
 | D920S10 | 单条插在其他插槽 | 不亮 |
 | D920S10 | 两条分别插DDR4_1 DDR4_2，显示两条分别位于CHANNEL 0，1| 读DDRC0 DDRC1没事，读DDRC2 DDRC3卡死 |
 | W510 | 两条全插，显示两条分别位于CHANNEL 1，3| 读DDRC0 DDRC1没事，读DDRC2 DDRC3卡死 |
