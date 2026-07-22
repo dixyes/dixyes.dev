@@ -56,4 +56,18 @@ mm 0x94d30710
 
 ## 猜测
 
-只插CHANNEL 1的时候多少有点说法，要不要把这个逻辑实现到tablesfix里？
+只插CHANNEL 1的时候多少有点说法，~~要不要把这个逻辑实现到tablesfix里？~~
+
+## 更新
+
+写了个小程序读取`gHisiEfiMemoryMapGuid`的HOB，发现在W510上HOB给出的两个ddrc分别是channel 0和1，其中0的内存的SMBIOS显示为CHANNEL 3，原理不明
+
+那就是说：
+
+- 在channel 1上只插一条的时候，就只初始化DDRC1
+- 在channel 0上只插一条，初始化DDRC 0和1，但我也写了程序看了，这时候DDRC 1的功能是空的：能正常配置`DDRC_PERF_CTRL`寄存器，但计数器一直是0，不会增长
+
+因此计划实现：
+
+1. 通过HOB获取DDR信息
+2. 关掉所有没有插内存的DDRC，因为就算IO不会hang也用不了，没意义
